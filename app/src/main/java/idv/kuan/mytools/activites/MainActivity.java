@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import idv.kuan.mytools.R;
+import idv.kuan.mytools.calculator.activites.CalculatorActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         init();
-
 
     }
 

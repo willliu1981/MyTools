@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MyTools"
         tools:targetApi="31" >
         <activity
-            android:name=".activites.CalculatorActivity"
+            android:name=".calculator.activites.CalculatorActivity"
             android:exported="false" />
         <activity
             android:name=".activites.MainActivity"

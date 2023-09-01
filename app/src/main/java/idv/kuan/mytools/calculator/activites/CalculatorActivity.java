@@ -1,4 +1,4 @@
-package idv.kuan.mytools.activites;
+package idv.kuan.mytools.calculator.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 

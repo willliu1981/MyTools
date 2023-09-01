@@ -4,21 +4,293 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activites.CalculatorActivity">
+    tools:context=".calculator.activites.CalculatorActivity">
+
+    <!-- calc -->
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/calc.txtv.result"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:text="0"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:text="TextView"
-        android:textSize="32sp"
+        android:orientation="vertical"
+        android:padding="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32999998" />
+        app:layout_constraintVertical_bias="0.8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/calc.btn.square_root"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:text="√"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="30dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+
+            <Button
+                android:id="@+id/calc.btn.clear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:text="C"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="146dp"
+                tools:layout_editor_absoluteY="152dp" />
+
+            <Button
+                android:id="@+id/calc.btn.backspace"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:text="←"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="274dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Button
+                android:id="@+id/calc.btn.divide"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="/"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="409dp"
+                tools:layout_editor_absoluteY="169dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/calc.btn.num7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:text="7"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="30dp"
+                tools:layout_editor_absoluteY="261dp" />
+
+            <Button
+                android:id="@+id/calc.btn.num8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:text="8"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="146dp"
+                tools:layout_editor_absoluteY="261dp" />
+
+            <Button
+                android:id="@+id/calc.btn.num9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:text="9"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="261dp"
+                tools:layout_editor_absoluteY="254dp" />
+
+            <Button
+                android:id="@+id/calc.btn.multiply"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="*"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="409dp"
+                tools:layout_editor_absoluteY="269dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/calc.btn.num4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:text="4"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="30dp"
+                tools:layout_editor_absoluteY="345dp" />
+
+            <Button
+                android:id="@+id/calc.btn.num5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:text="5"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="154dp"
+                tools:layout_editor_absoluteY="345dp" />
+
+            <Button
+                android:id="@+id/calc.btn.num6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:text="6"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="274dp"
+                tools:layout_editor_absoluteY="345dp" />
+
+
+            <Button
+                android:id="@+id/calc.btn.subtract"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="395dp"
+                tools:layout_editor_absoluteY="345dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/calc.btn.num1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:text="1"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="440dp" />
+
+            <Button
+                android:id="@+id/calc.btn.num2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:text="2"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="146dp"
+                tools:layout_editor_absoluteY="440dp" />
+
+            <Button
+                android:id="@+id/calc.btn.num3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:text="3"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="274dp"
+                tools:layout_editor_absoluteY="440dp" />
+
+            <Button
+                android:id="@+id/calc.btn.add"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="+"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="409dp"
+                tools:layout_editor_absoluteY="448dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/calc.btn.sign"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:text="±"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="38dp"
+                tools:layout_editor_absoluteY="532dp" />
+
+            <Button
+                android:id="@+id/calc.btn.num0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:text="0"
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="154dp"
+                tools:layout_editor_absoluteY="532dp" />
+
+
+            <Button
+                android:id="@+id/calc.btn.decimal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:text="."
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="261dp"
+                tools:layout_editor_absoluteY="532dp" />
+
+
+            <Button
+                android:id="@+id/calc.btn.equals"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="="
+                android:textSize="32sp"
+                tools:layout_editor_absoluteX="409dp"
+                tools:layout_editor_absoluteY="532dp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
