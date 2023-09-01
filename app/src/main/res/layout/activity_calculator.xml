@@ -10,11 +10,16 @@
 
     <TextView
         android:id="@+id/calc.txtv.result"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="right"
+        android:paddingLeft="32dp"
+        android:paddingTop="16dp"
+        android:paddingRight="32dp"
+        android:paddingBottom="16dp"
         android:text="0"
         android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"

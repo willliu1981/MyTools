@@ -7,8 +7,8 @@ android {
 
     defaultConfig {
         applicationId "idv.kuan.mytools"
-        minSdk 27
-        targetSdk 28
+        minSdk 24
+        targetSdk 24
         versionCode 1
         versionName "1.0"
 
