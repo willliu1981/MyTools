@@ -13,7 +13,8 @@ public class CalculatorActivity extends AppCompatActivity {
 
     private TextView txtvResult;
     private Button btnNum1, btnNum2, btnNum3, btnNum4, btnNum5, btnNum6, btnNum7, btnNum8, btnNum9, btnNum0;
-    private Button btnAdd, btnSubtract, btnMultiply, btnDivide, btnEquals;
+    private Button btnAdd, btnSubtract, btnMultiply, btnDivide;
+    private Button btnEquals, btnClear;
     private String lastOperation = "";
     private String lastArithmeticOperation = "prime";
     private String result = "";
@@ -27,6 +28,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
 
         init();
+        initState();
 
     }
 
@@ -56,6 +58,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
 
         (btnEquals = findViewById(R.id.calc_btn_equals)).setOnClickListener(new OnClickWithEqualsOperationListener());
+        (btnClear = findViewById(R.id.calc_btn_clear)).setOnClickListener(new OnClickWithClearOperationListener());
 
 
     }
@@ -66,7 +69,7 @@ public class CalculatorActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             if (lastOperation.equals("equals")) {
-                lastResult = 0;
+                initState();
             }
 
             result += ((TextView) view).getText().toString();
@@ -101,6 +104,14 @@ public class CalculatorActivity extends AppCompatActivity {
         }
     }
 
+    class OnClickWithClearOperationListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View view) {
+            initState();
+        }
+    }
+
     private void getResult() {
         if (result.equals("")) {
             result = "0";
@@ -126,4 +137,14 @@ public class CalculatorActivity extends AppCompatActivity {
         result = "";
 
     }
+
+    private void initState() {
+        result = "0";
+        lastResult = 0;
+        lastOperation = "";
+        lastArithmeticOperation = "prime";
+
+        txtvResult.setText("0");
+    }
+
 }
