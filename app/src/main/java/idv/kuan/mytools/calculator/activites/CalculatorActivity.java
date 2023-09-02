@@ -14,7 +14,7 @@ public class CalculatorActivity extends AppCompatActivity {
     private TextView txtvResult;
     private Button btnNum1, btnNum2, btnNum3, btnNum4, btnNum5, btnNum6, btnNum7, btnNum8, btnNum9, btnNum0;
     private Button btnAdd, btnSubtract, btnMultiply, btnDivide;
-    private Button btnEquals, btnClear;
+    private Button btnEquals, btnClear, btnBackspace;
     private String lastOperation = "";
     private String lastArithmeticOperation = "prime";
     private String result = "";
@@ -59,6 +59,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
         (btnEquals = findViewById(R.id.calc_btn_equals)).setOnClickListener(new OnClickWithEqualsOperationListener());
         (btnClear = findViewById(R.id.calc_btn_clear)).setOnClickListener(new OnClickWithClearOperationListener());
+        (btnBackspace = findViewById(R.id.calc_btn_backspace)).setOnClickListener(new OnClickWithBackspaceOperationListener());
 
 
     }
@@ -109,6 +110,21 @@ public class CalculatorActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             initState();
+        }
+    }
+
+    class OnClickWithBackspaceOperationListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View view) {
+            if (lastOperation.equals("number")) {
+                result = result.substring(0, result.length() - 1);
+                if (result == "") {
+                    result = "0";
+                }
+                txtvResult.setText(result);
+            }
+
         }
     }
 
