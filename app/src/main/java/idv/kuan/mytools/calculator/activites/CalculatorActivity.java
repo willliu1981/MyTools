@@ -13,8 +13,9 @@ public class CalculatorActivity extends AppCompatActivity {
 
     private TextView txtvResult;
     private Button btnNum1, btnNum2, btnNum3, btnNum4, btnNum5, btnNum6, btnNum7, btnNum8, btnNum9, btnNum0;
-    private Button btnAdd, btnEquals;
+    private Button btnAdd, btnSubtract, btnMultiply, btnDivide, btnEquals;
     private String lastOperation = "";
+    private String lastArithmeticOperation = "prime";
     private String result = "";
     private double lastResult;
 
@@ -49,6 +50,11 @@ public class CalculatorActivity extends AppCompatActivity {
         (btnNum0 = findViewById(R.id.calc_btn_num0)).setOnClickListener(new OnClickWithNumbersListener());
 
         (btnAdd = findViewById(R.id.calc_btn_add)).setOnClickListener(new OnClickWithArithmeticOperationsListener());
+        (btnSubtract = findViewById(R.id.calc_btn_subtract)).setOnClickListener(new OnClickWithArithmeticOperationsListener());
+        (btnMultiply = findViewById(R.id.calc_btn_multiply)).setOnClickListener(new OnClickWithArithmeticOperationsListener());
+        (btnDivide = findViewById(R.id.calc_btn_divide)).setOnClickListener(new OnClickWithArithmeticOperationsListener());
+
+
         (btnEquals = findViewById(R.id.calc_btn_equals)).setOnClickListener(new OnClickWithEqualsOperationListener());
 
 
@@ -63,7 +69,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 lastResult = 0;
             }
 
-            result += ((TextView) view).getText();
+            result += ((TextView) view).getText().toString();
 
             lastOperation = "number";
 
@@ -75,13 +81,10 @@ public class CalculatorActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View view) {
-            if (result.equals("")) {
-                result = "0";
-            }
+            getResult();
 
-            lastResult = Double.parseDouble(result) + lastResult;
-            result = "";
-            lastOperation = "add";
+            lastOperation = "operation";
+            lastArithmeticOperation = ((TextView) view).getText().toString();
             txtvResult.setText(String.valueOf(lastResult));
         }
     }
@@ -90,10 +93,37 @@ public class CalculatorActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View view) {
-            lastResult = Double.parseDouble(result) + lastResult;
-            result = "";
+            getResult();
+
+            lastArithmeticOperation = "";
             lastOperation = "equals";
             txtvResult.setText(String.valueOf(lastResult));
         }
+    }
+
+    private void getResult() {
+        if (result.equals("")) {
+            result = "0";
+        }
+
+        switch (lastArithmeticOperation) {
+            case "+":
+                lastResult = Double.parseDouble(result) + lastResult;
+                break;
+            case "-":
+                lastResult = lastResult - Double.parseDouble(result);
+                break;
+            case "*":
+                lastResult = Double.parseDouble(result) * lastResult;
+                break;
+            case "/":
+                lastResult = lastResult / Double.parseDouble(result);
+                break;
+            case "prime":
+                lastResult = Double.parseDouble(result);
+        }
+
+        result = "";
+
     }
 }
